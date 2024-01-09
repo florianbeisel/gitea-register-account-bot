@@ -145,7 +145,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 }
 
-// generatePassword creates a secure, random password of a given length
+// generatePassword creates a secure, random password of a given length.
 func generatePassword(length int) (string, error) {
 	const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 	var password strings.Builder
