@@ -1,0 +1,30 @@
+name-template: 'v$RESOLVED_VERSION 🌈'
+tag-template: 'v$RESOLVED_VERSION'
+
+version-resolver:
+  major:
+    labels:
+      - 'ReleaseTarget/Major'
+      - 'Kind/Breaking'
+  minor:
+    labels:
+      - 'ReleaseTarget/Minor'
+  patch:
+    labels:
+      - 'ReleaseTarget/Patch'
+  default: patch
+
+categories:
+  - title: '🚀 Features'
+    labels:
+      - 'Kind/Breaking'
+      - 'Kind/Feature'
+      - 'Kind/Enhancement'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'Kind/Bug'
+      - 'Kind/Security'
+  - title: '🧰 Maintenance'
+    labels: 
+      - 'Kind/Documentation'
+      - 'Kind/CI'
