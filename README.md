@@ -16,6 +16,36 @@ The bot requires the following environment variables to be set:
 - `GITEA_TOKEN`: The API token for accessing Gitea.
 - `GITEA_URL`: The base URL of your Gitea instance.
 
+### How to get the `DISCORD_TOKEN`
+
+1. Log in to the Discord Developer Portal
+
+2. **Create a New Application:**  
+    Click on the "New Application" button. Name your application and create it.
+
+3. **Create a Bot User:**  
+    In your application's settings, navigate to the "Bot" tab.  
+    Click on the "Add Bot" button and confirm the creation. This will create a new bot user associated with your application.
+
+4. **Get the Bot Token:**  
+    Under the bot settings, you will find a section labeled "TOKEN" with a link to "Copy".
+    Click on "Copy" to copy the bot token. You'll use this token in your bot's configuration.
+
+5. **Invite the Bot to Your Server:**  
+    In the application settings, navigate to the "OAuth2" tab.
+    Under "SCOPES", check bot.
+    In the "BOT PERMISSIONS" section, select the permissions your bot requires.
+    Copy the generated URL under "SCOPES" and paste it into your web browser. This will allow you to add the bot to one of your Discord servers.
+
+### How to get the Gitea Token
+
+1. Login to your gitea instance with a user that has access to the Administration or create a user with "Administrator" privileges.
+
+2. Navigate to your user settings and select "Applications" in the sidebar (`https://GITEA_URL/user/settings/applications`). 
+   Now you will need create an Access Token with write privileges to the `admin` scope.
+
+3. Record the Token that is displayed when saving the token.
+
 ## Build it yourself
 
 To build the bot from source, follow these steps:
@@ -95,6 +125,16 @@ To run the binary:
    ```
 
 For Windows, simply execute the .exe file after setting your environment variables.
+
+## Creating Gitea users from Discord
+
+Once you have the bot up and running with the required environment variables set and invited it to your Discord server you can start creating users. The bot will listen to the `!register` command and expects the following syntax:
+
+```bash
+!register --username=[Desired Username] --email=[Your Email address]
+```
+
+The bot will open a conversation via DM with the user who issued the command and confirm whether the registration was successful with the URL of the Gitea Server, and a temporary password which has to be changed on first login.
 
 ## Contributing
 
